@@ -1,0 +1,21 @@
+Columns in api_newsevent:
+- id (bigint, nullable: NO)
+- title_en (character varying, nullable: NO)
+- title_fr (character varying, nullable: NO)
+- date (date, nullable: NO)
+- description_en (text, nullable: NO)
+- description_fr (text, nullable: NO)
+- category (character varying, nullable: NO)
+- created_at (timestamp with time zone, nullable: NO)
+Columns in api_partner:
+- id (bigint, nullable: NO)
+- name_en (character varying, nullable: NO)
+- name_fr (character varying, nullable: NO)
+- country_en (character varying, nullable: NO)
+- country_fr (character varying, nullable: NO)
+- type (character varying, nullable: NO)
+- logo (character varying, nullable: YES)
+Columns in users:
+- id (integer, nullable: NO)
+- username (character varying, nullable: NO)
+- password (character varying, nullable: NO)

@@ -1,0 +1,270 @@
+{
+  "api_newsevent": [
+    {
+      "id": "4",
+      "date": "2025-12-29T22:00:00.000Z",
+      "description_en": "The new developer of EALI.bi University is announced.",
+      "description_fr": "Le nouveau developer de l'EALI est issue",
+      "imageUrl": "http://localhost:3000/uploads/64d18461093c959b47b99f1fd1024ce604.jpeg",
+      "title_en": "King",
+      "title_fr": "Toto",
+      "category": "Announcement",
+      "created_at": "2026-01-25T22:42:31.406Z"
+    },
+    {
+      "id": "2",
+      "date": "2024-02-27T22:00:00.000Z",
+      "description_en": "EALI.BI signs MOU with Kabale University Uganda for student exchange programs.",
+      "description_fr": "EALI.BI signs MOU with Kabale University Uganda for student exchange programs.",
+      "imageUrl": "http://localhost:3000/uploads/8a38ed893210f6af07e3100263dda6dbb3.png",
+      "title_en": "Siso",
+      "title_fr": "Lilo",
+      "category": "Inama",
+      "created_at": "2026-01-25T22:42:31.406Z"
+    },
+    {
+      "id": "3",
+      "date": "2024-01-14T22:00:00.000Z",
+      "description_en": "Applications are now open for all bachelor and diploma programs.",
+      "description_fr": "Applications are now open for all bachelor and diploma programs.",
+      "imageUrl": null,
+      "title_en": "Admissions Open for 2024 Academic Year",
+      "title_fr": "Les admissions sont ouvertes pour l'année académique 2024",
+      "category": "Admissions",
+      "created_at": "2026-01-25T22:42:31.406Z"
+    }
+  ],
+  "api_partner": [
+    {
+      "id": "1",
+      "name_en": "Kabale University",
+      "name_fr": "Université de Kabale",
+      "country_en": "Uganda",
+      "country_fr": "Ouganda",
+      "type": "international",
+      "logo": null
+    },
+    {
+      "id": "2",
+      "name_en": "Centre International de Recherche pour le Développement Durable (CIRDD)",
+      "name_fr": "Centre International de Recherche pour le Développement Durable (CIRDD)",
+      "country_en": "International",
+      "country_fr": "International",
+      "type": "international",
+      "logo": null
+    },
+    {
+      "id": "3",
+      "name_en": "Pareto University",
+      "name_fr": "Université Pareto",
+      "country_en": "United Kingdom",
+      "country_fr": "Royaume-Uni",
+      "type": "international",
+      "logo": null
+    },
+    {
+      "id": "4",
+      "name_en": "Université Evangelique en Afrique (UEA)",
+      "name_fr": "Université Evangelique en Afrique (UEA)",
+      "country_en": "RDC",
+      "country_fr": "RDC",
+      "type": "international",
+      "logo": null
+    },
+    {
+      "id": "5",
+      "name_en": "Institut Supérieur de Développement Rural (ISDR)",
+      "name_fr": "Institut Supérieur de Développement Rural (ISDR)",
+      "country_en": "RDC",
+      "country_fr": "RDC",
+      "type": "international",
+      "logo": null
+    },
+    {
+      "id": "6",
+      "name_en": "Université du Burundi",
+      "name_fr": "Université du Burundi",
+      "country_en": "Burundi",
+      "country_fr": "Burundi",
+      "type": "national",
+      "logo": null
+    },
+    {
+      "id": "7",
+      "name_en": "Université de Ngozi",
+      "name_fr": "Université de Ngozi",
+      "country_en": "Burundi",
+      "country_fr": "Burundi",
+      "type": "national",
+      "logo": null
+    },
+    {
+      "id": "8",
+      "name_en": "Universités privées au Burundi",
+      "name_fr": "Universités privées au Burundi",
+      "country_en": "Burundi",
+      "country_fr": "Burundi",
+      "type": "national",
+      "logo": null
+    },
+    {
+      "id": "9",
+      "name_en": "Gouvernement du Burundi",
+      "name_fr": "Gouvernement du Burundi",
+      "country_en": "Burundi",
+      "country_fr": "Burundi",
+      "type": "national",
+      "logo": null
+    },
+    {
+      "id": "10",
+      "name_en": "Institut des Sciences Agronomiques du Burundi (ISABU)",
+      "name_fr": "Institut des Sciences Agronomiques du Burundi (ISABU)",
+      "country_en": "Burundi",
+      "country_fr": "Burundi",
+      "type": "national",
+      "logo": null
+    },
+    {
+      "id": "11",
+      "name_en": "US Embassy du Burundi",
+      "name_fr": "Ambassade des Etats-Unis au Burundi",
+      "country_en": "Burundi",
+      "country_fr": "Burundi",
+      "type": "national",
+      "logo": null
+    },
+    {
+      "id": "12",
+      "name_en": "Higher Life Foundation",
+      "name_fr": "Higher Life Foundation",
+      "country_en": "Burundi",
+      "country_fr": "Burundi",
+      "type": "national",
+      "logo": null
+    }
+  ],
+  "tenders": [
+    {
+      "id": 1,
+      "description_en": "Ijskakammd",
+      "description_fr": "adjdskdaklaal;",
+      "title_en": "LL",
+      "title_fr": "FF",
+      "deadline": "2026-01-30",
+      "date_posted": "2026-01-25",
+      "fileUrl": "http://localhost:3000/uploads/7fb6055053c315ff45f1b3ad1008e3d110.pdf",
+      "createdAt": "2026-01-25T22:45:29.698Z"
+    }
+  ],
+  "programs": [
+    {
+      "id": 1,
+      "name_en": "Communication Sciences",
+      "name_fr": "Sciences de la Communication",
+      "type": "faculty",
+      "options_en": "Communication for Development",
+      "options_fr": "Communication pour le Développement",
+      "icon": "Globe"
+    },
+    {
+      "id": 2,
+      "name_en": "Economics and Management Sciences",
+      "name_fr": "Sciences Economiques et de Gestion",
+      "type": "faculty",
+      "options_en": "Management and Accounting,Community Development",
+      "options_fr": "Gestion et Comptabilité,Développement Communautaire",
+      "icon": "Briefcase"
+    },
+    {
+      "id": 3,
+      "name_en": "Health Sciences",
+      "name_fr": "Sciences de la Santé",
+      "type": "faculty",
+      "options_en": "Public Health,Human Nutrition",
+      "options_fr": "Santé Publique,Nutrition Hummaine",
+      "icon": "BookOpen"
+    },
+    {
+      "id": 4,
+      "name_en": "Sciences and Technologies",
+      "name_fr": "Sciences et Technologies",
+      "type": "faculty",
+      "options_en": "Computer Network Management,IT Maintenance,Business Computing",
+      "options_fr": "Gestion des Réseaux Informatiques,Maintenance Informatique,Informatique de Gestion",
+      "icon": "Cpu"
+    },
+    {
+      "id": 5,
+      "name_en": "Agronomic Sciences",
+      "name_fr": "Sciences Agronomiques",
+      "type": "faculty",
+      "options_en": "Plant Production,Animal Production,Food Security",
+      "options_fr": "Production Végétale,Production Animale,Sécurité Alimentaire",
+      "icon": "Sprout"
+    },
+    {
+      "id": 6,
+      "name_en": "Management and Accounting",
+      "name_fr": "Gestion et Comptabilité",
+      "type": "professional_course",
+      "options_en": null,
+      "options_fr": null,
+      "icon": "Briefcase"
+    },
+    {
+      "id": 7,
+      "name_en": "Community Development",
+      "name_fr": "Développement Communautaire",
+      "type": "professional_course",
+      "options_en": null,
+      "options_fr": null,
+      "icon": "Globe"
+    },
+    {
+      "id": 8,
+      "name_en": "Telecommunication and Networks",
+      "name_fr": "Télécommunication et Réseaux",
+      "type": "professional_course",
+      "options_en": null,
+      "options_fr": null,
+      "icon": "Wifi"
+    },
+    {
+      "id": 9,
+      "name_en": "IT Maintenance",
+      "name_fr": "Maintenance Informatique",
+      "type": "professional_course",
+      "options_en": null,
+      "options_fr": null,
+      "icon": "Cpu"
+    },
+    {
+      "id": 10,
+      "name_en": "Hospitality and Tourism",
+      "name_fr": "Hôtelerie et Tourisme",
+      "type": "professional_course",
+      "options_en": null,
+      "options_fr": null,
+      "icon": "Briefcase"
+    },
+    {
+      "id": 11,
+      "name_en": "Agriculture and Development",
+      "name_fr": "Agriculture et Développement",
+      "type": "professional_course",
+      "options_en": null,
+      "options_fr": null,
+      "icon": "Sprout"
+    },
+    {
+      "id": 12,
+      "name_en": "Livestock and Development",
+      "name_fr": "Elevage et développement",
+      "type": "professional_course",
+      "options_en": null,
+      "options_fr": null,
+      "icon": "Sprout"
+    }
+  ]
+}
