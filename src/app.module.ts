@@ -23,13 +23,12 @@ import { join } from 'path';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT || '5432', 10),
-      username: process.env.DB_USERNAME || 'postgres',
-      password: process.env.DB_PASSWORD || 'alfatiha',
-      database: process.env.DB_NAME || 'eali_db',
+      url: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized : false,
+      },
       autoLoadEntities: true,
-      synchronize: true, // Auto-update schema to match entities (set to false in production)
+      synchronize: false, // Auto-update schema to match entities (set to false in production)
     }),
     NewsModule,
     TendersModule,
@@ -42,3 +41,4 @@ import { join } from 'path';
   providers: [AppService],
 })
 export class AppModule { }
+
