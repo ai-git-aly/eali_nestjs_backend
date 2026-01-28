@@ -23,12 +23,16 @@ import { join } from 'path';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized : false,
-      },
+      // Support both DATABASE_URL (Neon/production) and individual vars (local)
+      url: process.env.DATABASE_URL || undefined,
+      host: process.env.DATABASE_URL ? undefined : (process.env.DB_HOST || 'localhost'),
+      port: process.env.DATABASE_URL ? undefined : parseInt(process.env.DB_PORT || '5432', 10),
+      username: process.env.DATABASE_URL ? undefined : (process.env.DB_USERNAME || 'postgres'),
+      password: process.env.DATABASE_URL ? undefined : (process.env.DB_PASSWORD || 'alfatiha'),
+      database: process.env.DATABASE_URL ? undefined : (process.env.DB_NAME || 'eali_db'),
+      ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
       autoLoadEntities: true,
-      synchronize: false, // Auto-update schema to match entities (set to false in production)
+      synchronize: true, // Auto-update schema to match entities (set to false in production)
     }),
     NewsModule,
     TendersModule,
@@ -41,4 +45,3 @@ import { join } from 'path';
   providers: [AppService],
 })
 export class AppModule { }
-
