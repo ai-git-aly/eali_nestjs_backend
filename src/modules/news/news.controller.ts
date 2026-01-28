@@ -34,7 +34,8 @@ export class NewsController {
     create(@Body() news: any, @UploadedFile() file: Express.Multer.File): Promise<News> {
         const newsData = { ...news };
         if (file) {
-            newsData.imageUrl = `http://localhost:3000/uploads/${file.filename}`;
+            const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+            newsData.imageUrl = `${baseUrl}/uploads/${file.filename}`;
         }
         return this.newsService.create(newsData);
     }
@@ -53,7 +54,8 @@ export class NewsController {
     update(@Param('id') id: string, @Body() newsData: any, @UploadedFile() file: Express.Multer.File): Promise<News | null> {
         const updatedData = { ...newsData };
         if (file) {
-            updatedData.imageUrl = `http://localhost:3000/uploads/${file.filename}`;
+            const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+            updatedData.imageUrl = `${baseUrl}/uploads/${file.filename}`;
         }
         return this.newsService.update(+id, updatedData);
     }
