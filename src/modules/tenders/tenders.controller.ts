@@ -34,7 +34,8 @@ export class TendersController {
     create(@Body() tender: any, @UploadedFile() file: Express.Multer.File): Promise<Tender> {
         const tenderData = { ...tender };
         if (file) {
-            tenderData.fileUrl = `http://localhost:3000/uploads/${file.filename}`;
+            const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+            tenderData.fileUrl = `${baseUrl}/uploads/${file.filename}`;
         }
         return this.tendersService.create(tenderData);
     }
@@ -53,7 +54,8 @@ export class TendersController {
     update(@Param('id') id: string, @Body() tender: any, @UploadedFile() file: Express.Multer.File): Promise<Tender | null> {
         const tenderData = { ...tender };
         if (file) {
-            tenderData.fileUrl = `http://localhost:3000/uploads/${file.filename}`;
+            const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+            tenderData.fileUrl = `${baseUrl}/uploads/${file.filename}`;
         }
         return this.tendersService.update(+id, tenderData);
     }
