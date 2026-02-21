@@ -10,6 +10,7 @@ import { ProgramsModule } from './modules/programs/programs.module.js';
 import { AuthModule } from './modules/auth/auth.module.js';
 import { MessagesModule } from './modules/messages/messages.module.js';
 import { DashboardModule } from './modules/dashboard/dashboard.module.js';
+import { FAQModule } from './modules/faqs/faq.module.js';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
@@ -40,8 +41,9 @@ import { join } from 'path';
     PartnersModule,
     ProgramsModule,
     AuthModule,
-    MessagesModule,
+MessagesModule,
     DashboardModule,
+    FAQModule,
   ],
   controllers: [AppController],
   providers: [AppService],
