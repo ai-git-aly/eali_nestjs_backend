@@ -40,7 +40,7 @@ export class MessagesService {
         message.name = createMessageDto.name;
         message.email = createMessageDto.email;
         message.subject = createMessageDto.subject;
-        message.content = createMessageDto.content;
+        message.content = createMessageDto.content || createMessageDto.message || '';
         const savedMessage = await this.messageRepository.save(message);
         console.log(`Message saved to database with ID: ${savedMessage.id}`);
 
@@ -96,7 +96,55 @@ export class MessagesService {
         console.log(`Email notification sent for message ID: ${message.id}`);
     }
 
-    async findAll(): Promise<Message[]> {
+async findAll(): Promise<Message[]> {
         return this.messageRepository.find({ order: { createdAt: 'DESC' } });
+    }
+
+    async reply(id: number, replyContent: string): Promise<Message> {
+        const message = await this.messageRepository.findOne({ where: { id } });
+        if (!message) {
+            throw new Error('Message not found');
+        }
+        
+        message.replied = true;
+        message.reply_content = replyContent;
+        
+        const updatedMessage = await this.messageRepository.save(message);
+        
+        // Send reply email if configured
+        if (this.transporter) {
+            try {
+                await this.sendReplyEmail(message, replyContent);
+            } catch (error) {
+                console.error('Failed to send reply email:', error);
+            }
+        }
+        
+        return updatedMessage;
+    }
+
+    private async sendReplyEmail(message: Message, replyContent: string) {
+        const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: message.email,
+            subject: `Re: ${message.subject}`,
+            html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h2 style="color: #7c2d12; border-bottom: 2px solid #7c2d12; padding-bottom: 10px;">
+                        Re: ${message.subject}
+                    </h2>
+                    <div style="margin-top: 20px; padding: 15px; background-color: #f5f5f5; border-radius: 8px;">
+                        <h3 style="margin-top: 0;">Our Response:</h3>
+                        <p style="white-space: pre-wrap;">${replyContent}</p>
+                    </div>
+                    <p style="margin-top: 20px; color: #666; font-size: 12px;">
+                        Sent from EALI website on ${new Date().toLocaleString()}
+                    </p>
+                </div>
+            `,
+        };
+
+        await this.transporter!.sendMail(mailOptions);
+        console.log(`Reply email sent for message ID: ${message.id}`);
     }
 }

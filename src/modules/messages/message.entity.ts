@@ -19,4 +19,10 @@ export class Message {
 
     @CreateDateColumn()
     createdAt: Date;
+
+    @Column({ default: false })
+    replied: boolean;
+
+    @Column({ type: 'text', nullable: true })
+    reply_content: string | null;
 }
