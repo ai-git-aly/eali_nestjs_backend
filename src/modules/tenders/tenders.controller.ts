@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Put, Param, Delete, UseGuards, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete, UseGuards, UseInterceptors, UploadedFile, ParseFilePipeBuilder, HttpStatus } from '@nestjs/common';
 import { TendersService } from './tenders.service.js';
 import { Tender } from './tender.entity.js';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
@@ -31,8 +31,11 @@ export class TendersController {
             },
         }),
     }))
-    create(@Body() tender: any, @UploadedFile() file: Express.Multer.File): Promise<Tender> {
-        const tenderData = { ...tender };
+    create(
+        @Body() body: Partial<Tender>,
+        @UploadedFile() file: Express.Multer.File,
+    ): Promise<Tender> {
+        const tenderData = { ...body };
         if (file) {
             const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
             tenderData.fileUrl = `${baseUrl}/uploads/${file.filename}`;
@@ -51,12 +54,23 @@ export class TendersController {
             },
         }),
     }))
-    update(@Param('id') id: string, @Body() tender: any, @UploadedFile() file: Express.Multer.File): Promise<Tender | null> {
-        const tenderData = { ...tender };
+    async update(
+        @Param('id') id: string,
+        @Body() body: Partial<Tender>,
+        @UploadedFile() file: Express.Multer.File,
+    ): Promise<Tender | null> {
+        const tenderData: Partial<Tender> = { ...body };
+        
         if (file) {
             const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
             tenderData.fileUrl = `${baseUrl}/uploads/${file.filename}`;
+        } else {
+            const existing = await this.tendersService.findOne(+id);
+            if (existing) {
+                tenderData.fileUrl = existing.fileUrl;
+            }
         }
+        
         return this.tendersService.update(+id, tenderData);
     }
 
